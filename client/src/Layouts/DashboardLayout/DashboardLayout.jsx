@@ -21,7 +21,7 @@ const DashboardLayout = () => {
   const { user, logoutUser } = useAuth();
   const navigate = useNavigate();
 
-  // Make sure your user object has a 'role' property, e.g., 'customer', 'seller', 'admin'
+  // Make sure your user object has a 'role' property, e.g., 'customer', 'seller', 'admin'.
   const userRole = user?.role || "customer";
 
   const defaultAvtar = `https://ui-avatars.com/api/?name=${
