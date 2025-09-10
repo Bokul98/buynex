@@ -11,7 +11,7 @@ const is_live = false; //true for live, false for sandbox
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://buy-nex.web.app"],
+    origin: ["http://localhost:5173", "https://buynex.netlify.app"],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS']
   })
@@ -871,7 +871,7 @@ async function run() {
         success_url: `https://buy-nex.vercel.app/payment/success/${orderData.orderNumber}`,
         fail_url: `https://buy-nex.vercel.app/payment/fail/${orderData.orderNumber}`,
         cancel_url: `https://buy-nex.vercel.app/payment/fail/${orderData.orderNumber}`,
-        ipn_url: "http://localhost:3030/ipn",
+        ipn_url: "https://buy-next-server.vercel.app/ipn",
         shipping_method: "Courier",
         product_name: "Multiple Products",
         product_category: "Electronic",
@@ -954,7 +954,7 @@ async function run() {
 
         // 4. Redirect if successful
         res.redirect(
-          `https://buy-nex.web.app/payment-success/${orderNumber}`
+          `https://buy-next-server.vercel.app/payment-success/${orderNumber}`
         );
       } catch (err) {
         console.error("Payment Success Error:", err);
@@ -967,7 +967,7 @@ async function run() {
       try {
         await orderCollection.deleteOne({ orderNumber });
         await trackingCollection.deleteOne({ orderId: orderNumber });
-        res.redirect(`https://buy-nex.web.app/payment-fail/${orderNumber}`);
+        res.redirect(`https://buy-next-server.vercel.app/payment-fail/${orderNumber}`);
       } catch (err) {
         console.error("Payment Fail Error:", err);
         res.status(500).send("Error handling failed payment");
@@ -1910,7 +1910,4 @@ async function run() {
 }
 run().catch(console.dir);
 
-app.listen(port, () => {
-  const time = new Date().toLocaleTimeString();
-  console.log(`🚀 Server is running on http://localhost:${port} at ${time}`);
-});
+module.exports = app;
