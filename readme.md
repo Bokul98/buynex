@@ -14,6 +14,10 @@ Buy-Nex is a full-stack e-commerce application built with the MERN stack to prov
 It features separate dashboards for users, sellers, and admins, real-time chat, AI-powered assistance, and a responsive, modern UI.
 </p>
 
+<p align="center">
+  🔗 <a href="https://buynex.netlify.app/" target="_blank"><b>Live Demo</b></a>
+</p>
+
 ---
 
 ## ✨ Features
@@ -39,7 +43,7 @@ It features separate dashboards for users, sellers, and admins, real-time chat, 
 ### 🌟 **Extra Features**
 - 📰 Blog section for updates
 - 🤖 AI-powered shopping assistant
-- 🤖 AI-powered image based search assistant
+- 🖼️ AI-powered image-based search
 - 📱 Fully responsive design
 
 ---
@@ -47,10 +51,10 @@ It features separate dashboards for users, sellers, and admins, real-time chat, 
 ## 🚀 Tech Stack
 
 **Frontend:**  
-React, Vite, Tailwind CSS, DaisyUI, Axios, TanStack Query & Table, React Hook Form, Socket.IO Client  
+React, Vite, Tailwind CSS, DaisyUI, Axios, TanStack Query & Table, React Hook Form, Socket.IO Client, Framer Motion  
 
 **Backend:**  
-Node.js, Express.js, MongoDB, Mongoose, Socket.IO, SSLCommerz  
+Node.js, Express.js, MongoDB, Socket.IO, SSLCommerz  
 
 **Authentication:**  
 Firebase Authentication  
@@ -60,15 +64,18 @@ Firebase Authentication
 ## 🏁 Getting Started
 
 ### 📦 Prerequisites
-- Node.js (v14 or higher)
+- Node.js (v18 or higher recommended)
 - npm or yarn
+- MongoDB (local or cloud, e.g., MongoDB Atlas)
+- Firebase project (for authentication)
+- SSLCommerz account (sandbox/live for payment)
 
 ### 🔧 Installation
 
 ```bash
 # Clone the repository
 git clone https://github.com/your-username/buynex.git
-cd Buy-Nex
+cd buynex
 
 # Install server dependencies
 cd server
